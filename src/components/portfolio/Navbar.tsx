@@ -17,9 +17,11 @@ export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
   };
 
   return (
@@ -97,20 +99,16 @@ export const Navbar = () => {
           >
             <div className="container mx-auto px-4 py-4 space-y-2">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.button
                   key={link.name}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
-                  className="block py-3 px-4 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-colors"
+                  onClick={() => scrollToSection(link.href)}
+                  className="block w-full text-left py-3 px-4 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-colors"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
                   {link.name}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
           </motion.div>
