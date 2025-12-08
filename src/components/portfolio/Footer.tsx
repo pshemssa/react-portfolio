@@ -11,11 +11,6 @@ const socialLinks = [
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <footer className="py-6 border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
