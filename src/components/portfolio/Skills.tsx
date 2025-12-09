@@ -8,7 +8,6 @@ const skillCategories = [
       { name: 'TypeScript', level: 90 },
       { name: 'JavaScript', level: 95 },
       { name: 'Next.js', level: 85 },
-      { name: 'Vue.js', level: 75 },
     ],
   },
   {
@@ -27,7 +26,6 @@ const skillCategories = [
       { name: 'Git/GitHub', level: 90 },
       { name: 'Figma', level: 85 },
       { name: 'REST APIs', level: 90 },
-      { name: 'GraphQL', level: 75 },
       { name: 'Testing', level: 80 },
     ],
   },
