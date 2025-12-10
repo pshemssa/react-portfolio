@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, X, Sun, Moon, Download } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 
 
@@ -67,8 +67,18 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* Theme Toggle & Mobile Menu */}
+          {/* CV Download, Theme Toggle & Mobile Menu */}
           <div className="flex items-center gap-4">
+            <motion.button
+              onClick={() => window.open('/CV.pdf', '_blank')}
+              className="hidden md:flex items-center gap-2 px-3 py-2 text-sm bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download size={16} />
+              CV
+            </motion.button>
+            
             <motion.button
               onClick={toggleTheme}
               className="p-2 rounded-full bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
@@ -110,6 +120,16 @@ export const Navbar = () => {
                   {link.name}
                 </motion.button>
               ))}
+              <motion.button
+                onClick={() => window.open('/CV.pdf', '_blank')}
+                className="flex items-center gap-2 w-full py-3 px-4 text-foreground hover:text-primary hover:bg-secondary/50 rounded-lg transition-colors"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+              >
+                <Download size={16} />
+                Download CV
+              </motion.button>
             </div>
           </motion.div>
         )}
