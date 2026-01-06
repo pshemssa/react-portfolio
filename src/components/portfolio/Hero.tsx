@@ -49,7 +49,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl font-display italic sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
           >
-            A Frontend Developer
+            A FullStack Engineer
             <br />
             {/* <motion.span 
               className="font-display italic"
